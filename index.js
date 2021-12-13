@@ -11,7 +11,7 @@ const getAllGames = () => {
         .then(res => {
             console.log(res);
 
-            const games = res.gameData;
+            const games = res.data;
             getOutput.innerHTML = "";
             for (let game of games) {
                 const gameContainer = document.createElement("div");
@@ -42,12 +42,12 @@ const getAllGames = () => {
         .catch(err => console.error(err));
 }
 
+document.querySelector("button#getAll").addEventListener("click", getAllGames);
 
 // Post request for create
 document.querySelector("#addGameForm").addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // const form = event.target
     const form = event.target;
     const gameData = {
         gameTitle: form.gameTitle.value,
@@ -67,3 +67,33 @@ document.querySelector("#addGameForm").addEventListener('submit', function(event
             console.log(res);
         }).catch(err => console.error(err));
 });
+
+// Delete request
+
+// const deleteGame = document.createElement("button");
+// deleteGame.innerText = "Delete";
+// deleteGame.classList.add("btn");
+// deleteGame.addEventListener("click", () => {
+//     axios
+//     .delete(`${gameApplication}/delete/${game.id}`)
+//     .then(res => getAllGames())
+//     .catch(err => console.error(err))
+// });
+// getOutput.appendChild(deleteGame);
+
+
+// document.querySelector("#deleteGameForm").addEventListener("submit", function(event) {
+//     event.preventDefault();
+
+//     const form = event.target;
+//     const gameId = form.gameId.value;
+    
+//     axios
+//         .delete(`${gameApplication}/delete/${gameId}`)
+//         .then(res => {
+//             console.log(res)
+//             form.reset();
+//             form.gameId.focus();
+//             getAllGames();
+//         }).catch(err => console.error(err));
+//     });
