@@ -14,6 +14,7 @@ const getAllGames = () => {
             const games = res.data;
             getOutput.innerHTML = "";
             for (let game of games) {
+                // creating cards for each game entry
                 const gameContainer = document.createElement("div");
                 gameContainer.classList.add("column");
 
@@ -48,14 +49,48 @@ const getAllGames = () => {
                 releaseYear.innerText = `Release Year: ${game.releaseYear}`;
                 gameBody.appendChild(releaseYear);
 
+
+                // Update functionality
+                const updateGame = document.createElement("button");
+                updateGame.innerText = "Update";
+                updateGame.classList.add("btn", "btn-dark");
+                updateGame.addEventListener("click", () => {
+                    
+                    const gameData = {
+                        gameTitle: document.getElementById("gameTitle").value,
+                        genre: document.getElementById("genre").value,
+                        platform: document.getElementById("platform").value,
+                        publisher: document.getElementById("publisher").value,
+                        releaseYear: document.getElementById("releaseYear").value
+                     }
+               
+                     axios
+                     .put(`${gameApplication}/replace/${game.id}`, gameData)
+                     .then(res => {
+                        form.reset();
+                        console.log(res);
+                        getAllGames();
+                     }).catch(err => console.log(err));
+                 });
+
+                gameBody.appendChild(updateGame);
+                gameList.appendChild(gameBody)
+                gameContainer.appendChild(gameList);
+
+                getOutput.appendChild(gameContainer);
+
+
+                // Delete functionality
                 const deleteGame = document.createElement("button");
                 deleteGame.innerText = "Delete";
                 deleteGame.classList.add("btn", "btn-dark");
                 deleteGame.addEventListener("click", () => {
                     axios
                     .delete(`${gameApplication}/delete/${game.id}`)
-                    .then(res => getAllGames())
-                    .catch(err => console.error(err))
+                    .then(res => {
+                        getAllGames();
+                        alert(`Game deleted successfully`);
+                    }) .catch(err => console.error(err))
                 });
 
                 gameBody.appendChild(deleteGame);
@@ -96,3 +131,4 @@ document.querySelector("#addGameForm").addEventListener('submit', function(event
             console.log(res);
         }).catch(err => console.error(err));
 });
+
