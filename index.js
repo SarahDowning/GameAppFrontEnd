@@ -4,6 +4,7 @@ const gameApplication = "http://localhost:8080"
 const getOutput = document.querySelector("#getOutput");
 
 // Get All games request
+// Get all the games in the database and display them
 const getAllGames = () => {
     
     axios
@@ -55,22 +56,22 @@ const getAllGames = () => {
                 updateGame.innerText = "Update";
                 updateGame.classList.add("btn", "btn-dark");
                 updateGame.addEventListener("click", () => {
-                    
+
                     const gameData = {
-                        gameTitle: document.getElementById("gameTitle").value,
-                        genre: document.getElementById("genre").value,
-                        platform: document.getElementById("platform").value,
-                        publisher: document.getElementById("publisher").value,
-                        releaseYear: document.getElementById("releaseYear").value
+                        gameTitle: document.getElementById("gameTitle").value || game.gameTitle,
+                        genre: document.getElementById("genre").value || game.genre,
+                        platform: document.getElementById("platform").value || game.platform,
+                        publisher: document.getElementById("publisher").value || game.publisher,
+                        releaseYear: document.getElementById("releaseYear").value || game.releaseYear
                      }
-               
-                     axios
-                     .put(`${gameApplication}/replace/${game.id}`, gameData)
-                     .then(res => {
-                        form.reset();
+                    
+                    axios
+                    .put(`${gameApplication}/replace/${game.id}`, gameData)
+                    .then(res => {
                         console.log(res);
                         getAllGames();
-                     }).catch(err => console.log(err));
+                    }).catch(err => console.log(err)); 
+                    
                  });
 
                 gameBody.appendChild(updateGame);
@@ -78,7 +79,6 @@ const getAllGames = () => {
                 gameContainer.appendChild(gameList);
 
                 getOutput.appendChild(gameContainer);
-
 
                 // Delete functionality
                 const deleteGame = document.createElement("button");
@@ -104,9 +104,9 @@ const getAllGames = () => {
         .catch(err => console.error(err));
 }
 
-getAllGames();
+// getAllGames();
 
-document.querySelector("button#getAll").addEventListener("click", getOutput);
+document.querySelector("button#getAll").addEventListener("click", getAllGames);
 
 // Post request for create
 document.querySelector("#addGameForm").addEventListener('submit', function(event) {
