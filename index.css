@@ -12,6 +12,7 @@ h2 {
 
 h4 {
     text-align: center;
+    color:rgb(59, 186, 190)
 }
 
 .column {
@@ -37,21 +38,42 @@ form {
 
 .card-container {
     max-height: 618px;
-    /* margin-left: 30px; */
     background-color: rgb(48, 47, 58);
     border: 3px solid rgb(9, 237, 245);
-    border-radius: 25px;
+    border-radius: 5px;
     padding: 20px; 
     /* justify-content: space-between; */
-    overflow-y: scroll;
+    overflow-y: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     scroll-behavior: smooth;
 }
 
+.card-container::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(9, 237, 245);
+}
+
+
+.card-container::-webkit-scrollbar-track {
+    width: 10px;
+    background-color:rgb(48, 47, 58);
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: rgb(9, 237, 245);
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+    width: 10px;
+    background-color:rgb(83, 83, 83)
+}
+
 .card {
-    background-color:rgb(59, 186, 190);
+    background-color:rgb(66, 66, 66);
+    color:rgb(224, 220, 224);
     border-radius: 20px;
     border: 3px solid rgb(48, 47, 58);
     width: 300px;
@@ -116,9 +138,8 @@ button[id=getAll]:hover {
 button.update {
     margin-left: 120px;
     padding: 2px;
-    background-color:rgb(48, 47, 58);
+    background-color:rgb(9, 237, 245);
     border:rgb(83, 83, 83);
-    color:rgb(224, 220, 224);
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 10px;
@@ -127,9 +148,8 @@ button.update {
 button.update:hover {
     margin-left: 120px;
     padding: 2px;
-    background-color:rgb(83, 83, 83);
+    background-color:rgb(177, 119, 179);
     border:rgb(83, 83, 83);
-    color:rgb(59, 186, 190);
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 10px;
@@ -146,9 +166,8 @@ button.delete {
 
 button.delete:hover {
     padding: 2px;
-    background-color: rgb(184, 15, 15);
+    background-color: rgb(230, 132, 132);
     border:rgb(83, 83, 83);
-    color:rgb(59, 186, 190);
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 10px;
