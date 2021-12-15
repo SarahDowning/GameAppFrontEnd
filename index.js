@@ -17,17 +17,19 @@ const getAllGames = () => {
             for (let game of games) {
                 // creating cards for each game entry
                 const gameContainer = document.createElement("div");
-                gameContainer.classList.add("column");
+               // gameContainer.classList.add("column");
+            
 
                 const gameList = document.createElement("div");
                 gameList.classList.add("card");
+                
 
                 const gameBody = document.createElement("div");
                 gameBody.classList.add("card-body");
 
-                const gameTitle = document.createElement("p");
-                gameTitle.classList.add("card-title");
-                gameTitle.innerText = `Game Title: ${game.gameTitle}`;
+                const gameTitle = document.createElement("h4");
+                gameTitle.classList.add("card-text");
+                gameTitle.innerText = `${game.gameTitle}`;
                 gameBody.appendChild(gameTitle);
 
                 const genre = document.createElement("p");
@@ -54,7 +56,7 @@ const getAllGames = () => {
                 // Update functionality
                 const updateGame = document.createElement("button");
                 updateGame.innerText = "Update";
-                updateGame.classList.add("btn", "btn-dark");
+                updateGame.classList.add("update");
                 updateGame.addEventListener("click", () => {
 
                     const gameData = {
@@ -83,7 +85,7 @@ const getAllGames = () => {
                 // Delete functionality
                 const deleteGame = document.createElement("button");
                 deleteGame.innerText = "Delete";
-                deleteGame.classList.add("btn", "btn-dark");
+                deleteGame.classList.add("delete");
                 deleteGame.addEventListener("click", () => {
                     axios
                     .delete(`${gameApplication}/delete/${game.id}`)
@@ -131,4 +133,3 @@ document.querySelector("#addGameForm").addEventListener('submit', function(event
             console.log(res);
         }).catch(err => console.error(err));
 });
-

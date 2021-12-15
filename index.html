@@ -20,8 +20,11 @@
 
 <header>
     <a href="/">
-        <img src="Images/Web_Logo.png">
+        <img src="Images/Logo Design.png">
     </a>
+    <section>
+        <button id=getAll>View All Games</button>
+    </section>
 </header>
 
 <body>
@@ -29,37 +32,41 @@
         <section id="AddGameSection">
             <div id="GameForm">
                 <form id="addGameForm">
-                    <h2>Add new game</h2>
+                    <h2>Add/Update game</h2>
                     <label for="gameTitle" class="col-sm-3 col-form-label">Game Title</label>
                     <input type="text" class="form-control" placeholder="Enter Game Title" name="gameTitle"
                         id="gameTitle" />
                     <br>
                     <label for="genre" class="col-sm-3 col-form-label">Genre</label>
-                    <input type="text" class="form-control" placeholder="Select Genre" name="genre" id="genre" />
+                    <input type="text" class="form-control" placeholder="Enter Genre" name="genre" id="genre" />
                     <br>
                     <label for="platform" class="col-sm-3 col-form-label">Platform</label>
-                    <input type="text" class="form-control" placeholder="Select Platform" name="platform"
+                    <input type="text" class="form-control" placeholder="Enter Platform" name="platform"
                         id="platform" />
                     <br>
                     <label for="publisher" class="col-sm-3 col-form-label">Publisher</label>
-                    <input type="text" class="form-control" placeholder="Select Publisher" name="publisher"
+                    <input type="text" class="form-control" placeholder="Enter Publisher" name="publisher"
                         id="publisher" />
                     <br>
                     <label for="releaseYear" class="col-sm-3 col-form-label">Release Year</label>
-                    <input type="text" class="form-control" value="2021" name="releaseYear" id="releaseYear" />
-                    <button type="Submit" class="btn btn-dark">Add</button>
-                    <button type="Reset" class="btn btn-danger">Reset</button>
+                    <input type="text" class="form-control" placeholder="Enter Release Year" name="releaseYear"
+                        id="releaseYear" />
+                    <br>
+                    <button id=addButton type="Submit">Add</button>
+                    <button id=resetButton type="Reset">Reset</button>
                 </form>
             </div>
+            <section>
+                <div class="card-container" id="getOutput">
+                </div>
+            </section>
             </div>
-        </section>
-        <section>
-            <div id="getOutput">
-            </div>
-            <button id=getAll class="btn btn-dark">View All Games</button>
         </section>
     </main>
     <script src="index.js"></script>
 </body>
+<footer>
+    <br>
+</footer>
 
 </html>
