@@ -1,0 +1,175 @@
+body {
+    background-color: rgb(83, 83, 83);
+}
+
+header{
+    padding: 20px 25px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    color:rgb(59, 186, 190)
+}
+
+.column {
+    float:left;
+    width: 50%;
+    margin-left: 30px;
+}
+
+form {
+    float: left;
+    width:400px;
+    border: 3px solid rgb(9, 237, 245);
+    border-radius: 5px;
+    padding: 20px;
+    margin-right: 30px;
+    background-color: rgb(48, 47, 58);
+    color:rgb(224, 220, 224);
+}
+
+.container {
+    max-height: 800px;
+}
+
+.card-container {
+    max-height: 618px;
+    background-color: rgb(48, 47, 58);
+    border: 3px solid rgb(9, 237, 245);
+    border-radius: 5px;
+    padding: 20px; 
+    /* justify-content: space-between; */
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    scroll-behavior: smooth;
+}
+
+.card-container::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(9, 237, 245);
+}
+
+
+.card-container::-webkit-scrollbar-track {
+    width: 10px;
+    background-color:rgb(48, 47, 58);
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: rgb(9, 237, 245);
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+    width: 10px;
+    background-color:rgb(83, 83, 83)
+}
+
+.card {
+    background-color:rgb(66, 66, 66);
+    color:rgb(224, 220, 224);
+    border-radius: 20px;
+    border: 3px solid rgb(48, 47, 58);
+    width: 300px;
+    /* justify-content: space-between; */
+}
+
+button[type=submit] {
+    position: relative;
+    left: 70px;
+    background-color:rgb(9, 237, 245);
+    border:rgb(83, 83, 83);
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+button[type=submit]:hover {
+    background-color:rgb(177, 119, 179);
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+button[type=reset] {
+    position: relative;
+    left: 90px;
+    background-color: rgb(238, 63, 63);
+    border:rgb(83, 83, 83);
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+button[type=reset]:hover {
+    background-color: rgb(230, 132, 132);
+    border:rgb(83, 83, 83);
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+button[id=getAll] {
+    position: absolute;
+    right: 120px;
+    top: 200px;
+    border-radius: 15px;
+    align-content:center;
+    background-color:rgb(9, 237, 245);
+    border:rgb(83, 83, 83);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button[id=getAll]:hover {
+    background-color:rgb(177, 119, 179);
+    border:rgb(83, 83, 83);
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button.update {
+    margin-left: 120px;
+    padding: 2px;
+    background-color:rgb(9, 237, 245);
+    border:rgb(83, 83, 83);
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button.update:hover {
+    margin-left: 120px;
+    padding: 2px;
+    background-color:rgb(177, 119, 179);
+    border:rgb(83, 83, 83);
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button.delete {
+    background-color:rgb(238, 63, 63);
+    padding: 2px;
+    border:rgb(83, 83, 83);
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button.delete:hover {
+    padding: 2px;
+    background-color: rgb(230, 132, 132);
+    border:rgb(83, 83, 83);
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+        integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </link>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<header>
+    <a href="/">
+        <img src="Images/Logo Design.png">
+    </a>
+    <section>
+        <button id=getAll>View All Games</button>
+    </section>
+</header>
+
+<body>
+    <main class="container">
+        <section id="AddGameSection">
+            <div id="GameForm">
+                <form id="addGameForm">
+                    <h2>Add/Update game</h2>
+                    <label for="gameTitle" class="col-sm-3 col-form-label">Game Title</label>
+                    <input type="text" class="form-control" placeholder="Enter Game Title" name="gameTitle"
+                        id="gameTitle" />
+                    <br>
+                    <label for="genre" class="col-sm-3 col-form-label">Genre</label>
+                    <input type="text" class="form-control" placeholder="Enter Genre" name="genre" id="genre" />
+                    <br>
+                    <label for="platform" class="col-sm-3 col-form-label">Platform</label>
+                    <input type="text" class="form-control" placeholder="Enter Platform" name="platform"
+                        id="platform" />
+                    <br>
+                    <label for="publisher" class="col-sm-3 col-form-label">Publisher</label>
+                    <input type="text" class="form-control" placeholder="Enter Publisher" name="publisher"
+                        id="publisher" />
+                    <br>
+                    <label for="releaseYear" class="col-sm-3 col-form-label">Release Year</label>
+                    <input type="text" class="form-control" placeholder="Enter Release Year" name="releaseYear"
+                        id="releaseYear" />
+                    <br>
+                    <button id=addButton type="Submit">Add</button>
+                    <button id=resetButton type="Reset">Reset</button>
+                </form>
+            </div>
+            <section>
+                <div class="card-container" id="getOutput">
+                </div>
+            </section>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+<footer>
+    <br>
+</footer>
+
+</html>
